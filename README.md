@@ -1,0 +1,30 @@
+KampüsPost Mobil Uygulama Projesi
+
+2-Proje Oluşturma: npx @react-native-community/cli@latest init KampusPost komutu ile yeni React Native projesi oluşturdum.
+
+3-Ana Ekran Düzenleme: App.tsx güncelleyerek uygulama açılışında LoginScreen bileşenini gösterttim.
+
+4-Giriş Ekranı Oluşturma: components/LoginScreen.tsx dosyası oluşturdum.
+
+5-Giriş Formu: E-posta ve Şifre giriş kutuları (TextInput) ve bir "Giriş Yap" butonu (TouchableOpacity) ekledim.
+
+6-Yeniden Kullanılabilir Bileşen: components/CustomInput.tsx bileşeni oluşturdum ve LoginScreen içindeki tüm giriş kutularında kullanılarak kod tekrarının önlenmesini sağladım.
+
+7-Değerleri Konsola Yazdırma: "Giriş Yap" butonuna basıldığında girilen e-posta ve şifre değerleri console.log() ile konsola yazdırılmaktadır
+
+2. Adımın Ekran Görüntüsü: 
+![alt text](image.png)
+
+3. Adımın Ekran Görüntüsü:
+![alt text](image-1.png)
+
+4. Adımın Ekran Görüntüsü:
+![alt text](image-2.png)
+
+5. Adımın Ekran Görüntüsü:
+![alt text](image-3.png)
+
+6. Adımın Görüntüsü 5. Adım ile aynıydı SS istenmediği için ekleme yapmadım.
+
+7. Adımın Ekran Görüntüsü:
+![alt text](image-4.png)
