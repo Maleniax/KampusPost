@@ -1,4 +1,4 @@
-KampüsPost Mobil Uygulama Projesi
+KampüsPost Mobil Uygulama Projesi - ÖDEV 4'ün eklentileri alt kısımda
 
 2-Proje Oluşturma: npx @react-native-community/cli@latest init KampusPost komutu ile yeni React Native projesi oluşturdum.
 
@@ -28,3 +28,12 @@ KampüsPost Mobil Uygulama Projesi
 
 7. Adımın Ekran Görüntüsü:
 ![alt text](image-4.png)
+
+ÖDEV 4:
+Ödev kapsamında aşağıdaki yapıları ekledim:
+-React Navigation (Stack Navigator)
+-Login → Register → Home ekran akışı
+-CustomInput bileşeni
+-RegisterScreen’de şifre doğrulama
+-HomeScreen’de uzak API’den veri çekme (JSONPlaceholder)
+-FlatList ile gönderi listeleme
