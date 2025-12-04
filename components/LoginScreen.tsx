@@ -1,94 +1,69 @@
+// components/LoginScreen.tsx
 import React, { useState } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  StatusBar,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../App';
+import CustomInput from './CustomInput';
 
-import CustomInput from './CustomInput'; 
+const CustomInputAny = CustomInput as any;
 
-function LoginScreen(): React.JSX.Element {
+type Props = NativeStackScreenProps<RootStackParamList, 'Login'>;
+
+const LoginScreen: React.FC<Props> = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    console.log('Giriş Yapılmaya çalışılıyor:', { email, password });
+    console.log('Login values:', { email, password });
+    // Şimdilik şifre kontrolü yok
+    navigation.navigate('Home');
+  };
+
+  const handleGoRegister = () => {
+    navigation.navigate('Register');
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={styles.container.backgroundColor} />
-      
-      <View style={styles.formContainer}>
-        
-        <Text style={styles.title}>
-          Giriş Yap
-        </Text>
-        
-        <CustomInput
-          placeholder="E-posta" 
-          value={email} 
-          onChangeText={setEmail}
-          keyboardType="email-address" 
-          autoCapitalize="none" 
-          containerStyle={styles.inputContainer}
-        />
-        
-        {/* ARTIK CustomInput KULLANIYORUZ */}
-        <CustomInput
-          placeholder="Şifre"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={true} 
-          containerStyle={styles.inputContainer}
-        />
-        
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Giriş Yap</Text>
-        </TouchableOpacity>
-        
+    <View style={styles.container}>
+      <Text style={styles.title}>KampusPost</Text>
+
+      <CustomInputAny
+        label="E-posta"
+        value={email}
+        onChangeText={setEmail}
+        placeholder="eposta@ornek.com"
+        keyboardType="email-address"
+      />
+
+      <CustomInputAny
+        label="Şifre"
+        value={password}
+        onChangeText={setPassword}
+        placeholder="Şifreniz"
+        secureTextEntry
+      />
+
+      <View style={styles.button}>
+        <Button title="Giriş Yap" onPress={handleLogin} />
       </View>
-    </SafeAreaView>
+
+      <View style={styles.button}>
+        <Button title="Kayıt Ol" onPress={handleGoRegister} />
+      </View>
+    </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFFFFF', 
-  },
-  formContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-  },
+  container: { flex: 1, padding: 16, justifyContent: 'center' },
   title: {
-    fontSize: 28, 
-    fontWeight: 'bold', 
-    color: '#333333',
-    marginBottom: 30,
-  },
-  inputContainer: {
-    width: '100%', 
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 24,
+    textAlign: 'center',
   },
   button: {
-    width: '100%',
-    height: 50,
-    backgroundColor: '#007AFF',
-    borderRadius: 8,
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    marginTop: 10, 
-    elevation: 3, 
-  },
-  buttonText: {
-    color: '#FFFFFF',
-    fontSize: 18,
-    fontWeight: 'bold',
+    marginTop: 12,
   },
 });
 

@@ -1,17 +1,33 @@
+// components/CustomInput.tsx
 import React from 'react';
-import { TextInput, StyleSheet, TextInputProps, View } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  TextInputProps,
+} from 'react-native';
 
 interface CustomInputProps extends TextInputProps {
-  containerStyle?: object; 
+  label?: string;                       // label prop'u eklendi
+  value: string;                        // zorunlu value
+  onChangeText: (text: string) => void; // zorunlu onChangeText
 }
 
-const CustomInput: React.FC<CustomInputProps> = ({ containerStyle, ...props }) => {
+const CustomInput: React.FC<CustomInputProps> = ({
+  label,
+  value,
+  onChangeText,
+  ...rest
+}) => {
   return (
-    <View style={[styles.container, containerStyle]}>
+    <View style={styles.container}>
+      {label ? <Text style={styles.label}>{label}</Text> : null}
       <TextInput
         style={styles.input}
-        placeholderTextColor="#888" 
-        {...props} 
+        value={value}
+        onChangeText={onChangeText}
+        {...rest} // placeholder, secureTextEntry, keyboardType vs. buradan geliyor
       />
     </View>
   );
@@ -19,17 +35,20 @@ const CustomInput: React.FC<CustomInputProps> = ({ containerStyle, ...props }) =
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%', 
-    marginBottom: 15, 
+    marginBottom: 12,
+  },
+  label: {
+    marginBottom: 4,
+    fontSize: 14,
+    fontWeight: '500',
   },
   input: {
-    height: 50,
-    backgroundColor: '#f0f0f0', 
-    borderRadius: 8, 
-    paddingHorizontal: 15,
-    fontSize: 16,
     borderWidth: 1,
-    borderColor: '#ddd', 
+    borderColor: '#ccc',
+    borderRadius: 6,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    backgroundColor: '#fff',
   },
 });
 
