@@ -39,33 +39,34 @@ KampüsPost Mobil Uygulama Projesi - ÖDEV 4'ün eklentileri alt kısımda
 -FlatList ile gönderi listeleme
 
 1. Proje Klasör Yapısı
-![Folders](screenshots/01ss.png)
+![Folders](01ss.png)
 
-2. Navigation Yapısı (App.tsx)
-![Navigation](screenshots/02ss.png)
+3. Navigation Yapısı (App.tsx)
+![Navigation](02ss.png)
 
-3. LoginScreen – Giriş Ekranı
-![Login](screenshots/03ss.png)
+4. LoginScreen – Giriş Ekranı
+![Login](03ss.png)
 
-4. HomeScreen – Gönderi Listesi (FlatList)
-![Home](screenshots/04ss.png)
+5. HomeScreen – Gönderi Listesi (FlatList)
+![Home](04ss.png)
 
-5. RegisterScreen – Arayüz
-![Register](screenshots/05ss.png)
+6. RegisterScreen – Arayüz
+![Register](05ss.png)
 
-6. Şifreler Uyuşmuyor Uyarısı
-![Mismatch](screenshots/06ss.png)
+7. Şifreler Uyuşmuyor Uyarısı
+![Mismatch](06ss.png)
 
-7. Kayıt Başarılı Uyarısı
-![Success](screenshots/07ss.png)
+8. Kayıt Başarılı Uyarısı
+![Success](07ss.png)
 
-8. Konsol – Kayıt Başarılı Log'u
-![Register Log](screenshots/08ss.png)
+9. Konsol – Kayıt Başarılı Log'u
+![Register Log](08ss.png)
 
-9. HomeScreen – Fetch Kodu
-![Fetch Code](screenshots/09ss.png)
+10. HomeScreen – Fetch Kodu
+![Fetch Code](09ss.png)
 
-10. Konsol – Posts Data Array(100)
-![Posts Console](screenshots/10ss.png)
+11. Konsol – Posts Data Array(100)
+![Posts Console](10ss.png)
+
 
 
